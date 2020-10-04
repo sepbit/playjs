@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>PlayJS</title>
+    <meta name="description" content="Uma simples plataforma para executar JavaScript" />
+    <meta name="author" content="Vitor Guia" />
+    <meta name="copyright" content="&copy; 2020 Vitor Guia" />
+    <meta property="og:image" content="/assets/images/1200x630.png">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#212529">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.min.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">PlayJS</a>
+      </div> <!-- container -->
+    </nav>
+
+    <!--
+      Home page
+    -->
+    <main class="container" id="home">
+      <div class="row">
+        <div class="col">
+
+          <input type="text" class="form-control" id="name" value="project.js" required />
+          <p>
+            <button type="button" class="btn btn-dark" id="execute">Execute</button>
+            <button class="btn btn-secondary" type="button" id="download">Download</button>
+            <label class="btn btn-secondary mt-2">
+              Upload <input type="file" accept="application/javascript" id="upload" hidden />
+            </label>
+          </p>
+
+          <textarea id="code" style="width:100%;" required></textarea>
+          <br />
+
+          <p>Console</p>
+          <textarea id="log" style="background-color: #e9ecef; width:100%;" readonly></textarea>
+          <br />
+          <br />
+
+        </div>
+      </div>
+    </main>
+
+    <!--
+      About page
+    -->
+    <main class="container" style="display: none" id="about">
+      <div class="row">
+        <div class="col">
+
+          <h1>Sobre</h1>
+          <br />
+
+          <p>Uma simples plataforma para executar JavaScript, <a href="https://gitlab.com/sepbit/playjs" target="_blank">codigo fonte</a></p>
+
+          <br />
+          <hr />
+          <br />
+
+          <h2>Licença</h2>
+          <br />
+
+          <p>Copyright (C) 2020 Vitor Guia</p>
+          <p>Este programa vem com ABSOLUTAMENTE SEM NENHUMA GARANTIA. Este é um software livre e você pode redistribuí-lo sob certas condições, veja as licenças abaixo.</p>
+
+          <br />
+          <h3>Licenças do JavaScript</h3>
+          <br />
+
+          <!--
+            LibreJS
+          -->
+          <div class="table-responsive">
+            <table class="table table-striped" id="jslicense-labels1">
+              <tr>
+                <td><a href="https://code.jquery.com/jquery-3.5.1.slim.min.js">jquery-3.5.1.slim.min.js</a></td>
+                <td><a href="http://www.jclark.com/xml/copying.txt">Expat</a></td>
+                <td><a href="https://code.jquery.com/jquery-3.5.1.slim.js">jquery-3.5.1.slim.js</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js">popper.min.js</a></td>
+                <td><a href="http://www.jclark.com/xml/copying.txt">Expat</a></td>
+                <td><a href="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js">popper.js</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">bootstrap.min.js</a></td>
+                <td><a href="http://www.jclark.com/xml/copying.txt">Expat</a></td>
+                <td><a href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">bootstrap.js</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.min.js">codemirror.min.js</a></td>
+                <td><a href="http://www.jclark.com/xml/copying.txt">Expat</a></td>
+                <td><a href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js">codemirror.js</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/javascript/javascript.js">javascript.js</a></td>
+                <td><a href="http://www.jclark.com/xml/copying.txt">Expat</a></td>
+                <td><a href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/javascript/javascript.js">javascript.js</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/addon/selection/active-line.js">active-line.js</a></td>
+                <td><a href="http://www.jclark.com/xml/copying.txt">Expat</a></td>
+                <td><a href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/addon/selection/active-line.js">active-line.js</a></td>
+              </tr>
+              <tr>
+                <td><a href="/assets/app.js">app.js</a></td>
+                <td><a href="http://www.gnu.org/licenses/gpl-3.0.html">GNU-GPL-3.0-or-later</a></td>
+                <td><a href="/assets/app.js">app.js</a></td>
+              </tr>
+            </table>
+          </div>
+
+          <br />
+          <hr />
+          <br />
+
+          <h2>Política de privacidade</h2>
+          <br />
+
+          <p>Este aplicativo não armazena qualquer dado dos usuários e nem os fornece a terceiros.</p>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="container" id="footer">
+      <div class="row">
+        <div class="col">
+          <hr />
+          <p class="text-center">
+            <a href="/#/about" rel="jslicense">Mais informações</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- CodeMirror -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/javascript/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/addon/selection/active-line.js"></script>
+
+    <!-- jQuery, Popper.js and Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+      // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
+      const editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        mode: "application/javascript",
+        lineNumbers: true,
+      })
+
+      // editor.setOption('theme', 'default')
+      // editor.setSize("100%", "100%")
+      // @license-end
+    </script>
+    <!-- App -->
+    <script src="/assets/app.js"></script>
+    <script>
+      // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/aws.js')
+          .then(function() {
+            console.log('Service Worker Registered');
+          })
+      }
+      // @license-end
+    </script>
+  </body>
+</html>
