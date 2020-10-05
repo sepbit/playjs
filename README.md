@@ -8,7 +8,7 @@ Uma simples plataforma para executar JavaScript
 
 * Microsoft Store: [#](#)
 
-* Play Store: [#](#)
+* Play Store: [https://play.google.com/store/apps/details?id=com.sepbit.playjs](https://play.google.com/store/apps/details?id=com.sepbit.playjs)
 
 ## Contributing
 

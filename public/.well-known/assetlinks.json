@@ -1,5 +1,5 @@
 [{
       "relation": ["delegate_permission/common.handle_all_urls"],
       "target" : { "namespace": "android_app", "package_name": "com.sepbit.playjs",
-                   "sha256_cert_fingerprints": ["21:BB:3E:C3:D0:A0:2F:30:C2:23:F1:71:B7:0D:E4:D3:28:1E:77:FC:A5:5A:90:9C:CE:44:47:41:37:EE:58:C5"] }
+                   "sha256_cert_fingerprints": ["E7:54:33:1A:2F:DE:03:FF:A0:87:53:67:FF:F8:B2:74:16:02:4E:4A:7C:E7:A4:D0:5F:96:AB:CB:D7:FB:18:C6"] }
     }]
